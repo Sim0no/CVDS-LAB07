@@ -13,7 +13,7 @@
 		<result property='tarifaxdia' column='Tarifa_Dia'/>
 		<result property='formatorenta' column='Formato'/>
 		<result property='genero' column='genero'/>
-		<result property='tipo' column='Tipo_item'/>
+		<association property='tipo' column='Tipo_item' columnPrefix='Detalle_Tipo_'/>
 	</resultMap>
 
     

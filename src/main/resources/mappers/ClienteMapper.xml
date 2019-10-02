@@ -5,16 +5,21 @@
   
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper">
 
-	<select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
+	<select parameterType="map" id="consultarCliente" resultMap="ClienteResult">
 			Select * from Cliente;
 	</select>
-    <resultMap type='Cliente' id='ClienteResult'>
+	<resultMap type='Cliente' id='ClienteResult'>
 		<id property='documento' column='Documento'/>
 		<result property='nombre' column='Nombre'/>
 		<result property='telefono' column='Telefono'/>
 		<result property='direccion' column='Direccion'/>
 		<result property='email' column='Email'/>
 		<result property='vetado' column='Vetado'/>
-		<collection property='rentados' column='Item rentado' resultMap='/>
+		<collection property='rentados' column='Item rentado' resultMap='RentadosResult' columnPrefix='Detalle_'>
+			<id property='id' column='Id'/>
+			<result property='fechainiciorenta' column='Fecha_Inicio'/>
+			<result property='fechafinrenta' column='Fecha_Fin'/>
+			<association property ='item' column = 'Item' columnPrefix='Detalle_item_'/>
+		</collection>
 	</resultMap>
 </mapper>
