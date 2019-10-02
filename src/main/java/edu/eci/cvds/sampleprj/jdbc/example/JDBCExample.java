@@ -123,7 +123,10 @@ public class JDBCExample {
      */
     public static int valorTotalPedido(Connection con, int codigoPedido) throws SQLException{        
         //Crear prepared statement
-        PreparedStatement consultaValorPedido = con.prepareStatement("SELECT SUM(precio*cantidad) as total FROM ORD_PEDIDOS a,ORD_DETALLE_PEDIDO b,ORD_PRODUCTOS c WHERE a.codigo = b.pedido_fk and b.producto_fk = c.codigo and a.codigo = ? GROUP BY(a.codigo)");
+        PreparedStatement consultaValorPedido = con.prepareStatement("SELECT SUM(precio*cantidad) as total "
+                                                                    + " FROM ORD_PEDIDOS a,ORD_DETALLE_PEDIDO b,ORD_PRODUCTOS c"
+                                                                    +" WHERE a.codigo = b.pedido_fk and b.producto_fk = c.codigo and a.codigo = ?"
+                                                                    +" GROUP BY(a.codigo)");
         //asignar par�metros
         consultaValorPedido.setInt(1,codigoPedido);
         //usar executeQuery
