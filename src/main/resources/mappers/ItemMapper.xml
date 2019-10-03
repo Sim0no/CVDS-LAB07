@@ -6,14 +6,14 @@
 <mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper">
 
     <resultMap type='Item' id='ItemResult'>
-		<id property='id' column='id'/>
+		<id property='documento' column='Documento'/>
 		<result property='nombre' column='Nombre'/>
-		<result property='descripcion' column='descripcion'/>
-		<result property='fechalanzamiento' column='fechalanzamiento'/>
-		<result property='tarifaxdia' column='tarifaxdia'/>
-		<result property='formatorenta' column='formatorenta'/>
+		<result property='descripcion' column='Descripcion'/>
+		<result property='fechalanzamiento' column='Fecha_Lanzamiento'/>
+		<result property='tarifaxdia' column='Tarifa_Dia'/>
+		<result property='formatorenta' column='Formato'/>
 		<result property='genero' column='genero'/>
-		<association property='tipo' column='TIPOITEM_id' columnPrefix='Detalle_Tipo_'/>
+		<association property='tipo' column='Tipo_item' columnPrefix='Detalle_Tipo_'/>
 	</resultMap>
 
     
