@@ -3,13 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper">
-
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemRentadoMapper">	
 	<resultMap type='ItemRentado' id='ItemRentadoResult'>
-			<id property='id' column='id'/>
-			<result property='fechainiciorenta' column='fechainiciorenta'/>
-			<result property='fechafinrenta' column='fechafinrenta'/>
-			<association property='item' ofType='Item' resultMap='edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper' columnPrefix='Item_'/>
-
+		<id property='id' column='id'/>
+		<result property='fechainiciorenta' column='fechainiciorenta'/>
+		<result property='fechafinrenta' column='fechafinrenta'/>
+		<association property='item' javaType='Item' resultMap="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper.ItemResult" columnPrefix='item_'></association>
 	</resultMap>
 </mapper>
