@@ -95,7 +95,7 @@ public class MyBatisExample {
                 "Semanal",
                 "Ciencia ficcion"            
                 );
-        //im.insertarItem(aItem);
+        im.insertarItem(aItem);
         imprimirEspacios();
         System.out.println("--------------Consultar Items--------");
         System.out.println(im.consultarItems());
